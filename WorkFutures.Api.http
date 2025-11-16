@@ -1,0 +1,6 @@
+@WorkFutures.Api_HostAddress = http://localhost:5109
+
+GET {{WorkFutures.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
