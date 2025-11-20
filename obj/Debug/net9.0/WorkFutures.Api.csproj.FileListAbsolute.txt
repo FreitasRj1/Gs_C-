@@ -126,3 +126,4 @@ C:\Users\User\Desktop\C#_GS_2_1\WorkFutures.Api\obj\Debug\net9.0\refint\WorkFutu
 C:\Users\User\Desktop\C#_GS_2_1\WorkFutures.Api\obj\Debug\net9.0\WorkFutures.Api.pdb
 C:\Users\User\Desktop\C#_GS_2_1\WorkFutures.Api\obj\Debug\net9.0\WorkFutures.Api.genruntimeconfig.cache
 C:\Users\User\Desktop\C#_GS_2_1\WorkFutures.Api\obj\Debug\net9.0\ref\WorkFutures.Api.dll
+C:\Users\User\Desktop\C#_GS_2_1\WorkFutures.Api\obj\Debug\net9.0\WorkFutures.Api.sourcelink.json

@@ -1,60 +1,114 @@
-🚀 FutureOfWork Solution – API .NET 8
+# 🚀 WorkFutures API – .NET 8
 
-API RESTful para gerenciamento de Skills, Skill Levels e Assignments, desenvolvida em .NET 8 com boas práticas, validações e documentação via Swagger.
+API RESTful desenvolvida em **.NET 8** para gerenciamento de **Candidates**, **Courses** e **Job Matching**, utilizando Entity Framework Core, validações e arquitetura organizada por camadas.
 
-🔧 Tecnologias Utilizadas
+---
 
-.NET 8 Web API
+## 🔧 Tecnologias Utilizadas
 
-C#
+- **.NET 8 Web API**
+- **C#**
+- **Entity Framework Core**
+- **Swagger / OpenAPI**
+- **Microsoft SQL Server / LocalDB**
+- **Arquitetura por camadas (Controllers, Models, Data, Migrations)**
 
-Swagger / OpenAPI
+---
 
-Entity Framework Core
+## 📂 Estrutura do Projeto
 
-Arquitetura por camadas (Controllers, Models, Services)
-
-📂 Estrutura do Projeto
-FutureOfWork.Api/
+WorkFutures.Api/
 ├── Controllers/
-│   ├── SkillController.cs
-│   ├── SkillLevelController.cs
-│   └── AssignmentController.cs
+│ ├── CandidatesController.cs
+│ ├── CourseController.cs
+│ └── JobMatchController.cs
+│
+├── Data/
+│ └── AppDbContext.cs
+│
+├── Migrations/
+│ ├── 20251112132317_InitialCreate.cs
+│ ├── 20251112132317_InitialCreate.Designer.cs
+│ └── AppDbContextModelSnapshot.cs
+│
 ├── Models/
-│   ├── Skill.cs
-│   ├── SkillLevel.cs
-│   └── Assignment.cs
-├── Services/
-│   ├── SkillService.cs
-│   ├── SkillLevelService.cs
-│   └── AssignmentService.cs
+│ ├── Candidate.cs
+│ ├── Course.cs
+│ └── JobMatch.cs
+│
+├── appsettings.json
+├── appsettings.Development.json
 ├── Program.cs
-└── appsettings.json
+└── WorkFutures.Api.csproj
 
-▶ Como Rodar
+yaml
+Copiar código
+
+---
+
+## ▶ Como Rodar o Projeto
+
+### 1. Restaurar pacotes
+```bash
 dotnet restore
+2. Aplicar migrações (caso necessário)
+bash
+Copiar código
+dotnet ef database update
+3. Rodar o servidor
+bash
+Copiar código
 dotnet run
-
-
-Swagger disponível em:
-
-https://localhost:7104/swagger
-
+4. Acessar Swagger
+bash
+Copiar código
+https://localhost:5109/swagger
 🌐 Endpoints Principais
-Skills
+🔹 Candidates
+GET /api/candidates
 
-GET /api/skills
+POST /api/candidates
 
-POST /api/skills
+PUT /api/candidates/{id}
 
-PUT /api/skills/{id}
+DELETE /api/candidates/{id}
 
-DELETE /api/skills/{id}
+🔹 Courses
+GET /api/course
 
-Skill Levels
+POST /api/course
 
-CRUD completo.
+PUT /api/course/{id}
 
-Assignments
+DELETE /api/course/{id}
 
-CRUD com validações de Skill e SkillLevel.
+🔹 JobMatch
+GET /api/jobmatch
+
+POST /api/jobmatch
+
+Validação automática entre Candidate e Course
+
+🧱 Arquitetura
+A API segue uma arquitetura simples e escalável:
+
+Models: representam as entidades do sistema
+
+Data: contém o AppDbContext e integra o EF Core
+
+Controllers: expõem endpoints REST
+
+Migrations: histórico e criação do banco via EF
+
+📘 Melhorias Futuras
+Autenticação JWT
+
+Camada Services
+
+Paginação e filtros
+
+Deploy em Azure / Railway
+
+📄 Licença
+Projeto criado para fins acadêmicos (FIAP – 2025).
+Sinta-se livre para evoluir! 🚀
